@@ -32,16 +32,40 @@ VS Code naturally supports PowerShell until opening command Prompt saperately
 
 
 
-git clone <SSH key> => git init + download files from remote origin + set remote origin to SSH url 
 git init => initialize a local repo
 git add . => Stage all files weather untracked(git never saw file) or modified(we change a file that git has)
-git commit -m "Initial commit"   # Commit locally
-git remote add origin git@github.com:username/repo.git  # Link to remote
-git branch -M main       # Ensure main branch name
-git push -u origin main  # Push to remote
+git commit -m "Initial commit" => Commit locally
+git branch -M main => select main as branch, this happens locally
+git remote add origin <url>  # Link to a remote repo by specifying an origin
+git push -u origin main  # Push to remote origin -u sets --set-upstream so Git knows where to push and pull by default
 
 
-
+git clone <SSH key> => git init + download files from remote origin + set remote origin to SSH url 
 git status => branch, ahead/behind remote, U-untracked files, M-files not staged but modified, Changes staged for commit 
 git add <filename> => stage a single untracked file
 git rm --cached <filename> => to unstage back the untracked files, also unstages modified files back
+
+
+git restore --staged notes.txt 
+git restore notes.txt
+
+git branch => see branches locally
+git branch -a => see remote branches
+
+git remote -v => show origin names
+git remote show origin => shows origin with more details
+git remote remove origin => remove an origin after adding it
+
+
+git fetch origin => if remote has some changes then fetch it before pushing
+git push origin main => push code to origin and its main branch
+git push, git pull => if use -u in "git push -u origin main" -u sets --set-upstream so Git knows where to push and pull by default
+
+
+# Add the remote with the fetch URL
+git remote add origin https://github.com/aniket-2003-das/Git-and-GitHub.git
+# Set fetch URL for fetch only if required
+git remote set-url origin https://github.com/aniket-2003-das/Git-and-GitHub.git
+# Set push URL separately
+git remote set-url --push origin git@github.com:aniket-2003-das/Git-and-GitHub.git
+
