@@ -45,9 +45,15 @@ git status => branch, ahead/behind remote, U-untracked files, M-files not staged
 git add <filename> => stage a single untracked file
 git rm --cached <filename> => to unstage back the untracked files, also unstages modified files back
 
+# to restore to latest commit
+git restore --staged notes.txt => restore from stages no change in file but the staged data is removed
+git restore notes.txt => file gets changed to previous commit
+# to restore to a very old commmit
+git log -- notes.txt => find a commit hash for a specific version
+git restore --source <commit-hash> -- notes.txt => restore the specific file from a specific commit
+git restore --source <commit-hash> restore codebase to a specific commit
 
-git restore --staged notes.txt 
-git restore notes.txt
+
 
 git branch => see branches locally
 git branch -a => see remote branches
@@ -69,6 +75,3 @@ git remote set-url origin https://github.com/aniket-2003-das/Git-and-GitHub.git
 # Set push URL separately
 git remote set-url --push origin git@github.com:aniket-2003-das/Git-and-GitHub.git
 
-kkkkkk
-
-pppp
