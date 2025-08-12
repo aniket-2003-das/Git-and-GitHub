@@ -1,3 +1,4 @@
+# Common Terminologies
 Directory => Folder
 Terminal or Command Line => Interface for Text Commands
 CLI => Command Line Interface
@@ -7,7 +8,8 @@ GitHub => Website to host Repositories online
 Git => tool and system for version control
 
 
-Git Commands:
+
+# Git Commands:
 clone => duplicate a remote repository to local machine
 add => track your files and changes in Git
 commit => save your files/changes in Git
@@ -15,39 +17,44 @@ push => upload Git commits to a remote repo, like GitHub, GitLab, GitBucket
 pull => download changes from remote repo to local machine
 
 
-Command Prompt
+
+# Command Prompt
 see all files in dir => dir 
 Show all files => dir /a
-
-
-PowerShell
+# PowerShell
 see all files in dir => Get-ChildItem 
 Show all files => Get-ChildItem -Force
-
-
 shells => Command Prompt(old), PowerShell(2006-new), Git Bash, WSL
 Terminal => Not a shell itself — it’s an app to host multiple shells
-All commands of command Prompt should work with PowerShell
-VS Code naturally supports PowerShell until opening command Prompt saperately 
+// All commands of command Prompt should work with PowerShell
+// VS Code naturally supports PowerShell until opening command Prompt saperately 
 
 
 
+
+git clone <SSH key> => git init + download files from remote origin + set remote origin to SSH url 
 git init => initialize a local repo
 git add . => Stage all files weather untracked(git never saw file) or modified(we change a file that git has)
 git commit -m "Initial commit" => Commit locally
 git branch -M main => select main as branch, this happens locally
-git remote add origin <url>  # Link to a remote repo by specifying an origin
-git push -u origin main  # Push to remote origin -u sets --set-upstream so Git knows where to push and pull by default
+git remote add origin <url> => Link to a remote repo by specifying an origin
+git push -u origin main => Push to remote origin -u sets --set-upstream so Git knows where to push and pull by default
 
 
-git clone <SSH key> => git init + download files from remote origin + set remote origin to SSH url 
+
+# stagging a file
 git status => branch, ahead/behind remote, U-untracked files, M-files not staged but modified, Changes staged for commit 
-git add <filename> => stage a single untracked file
+git add ./<filename> => stage a single untracked file
 git rm --cached <filename> => to unstage back the untracked files, also unstages modified files back
+
+
 
 # to restore to latest commit
 git restore --staged notes.txt => restore from stages no change in file but the staged data is removed
 git restore notes.txt => file gets changed to previous commit
+
+
+
 # to restore to a very old commmit
 git log -- notes.txt => find a commit hash for a specific version
 git restore --source <commit-hash> -- notes.txt => restore the specific file from a specific commit
@@ -55,19 +62,23 @@ git restore --source <commit-hash> restore codebase to a specific commit
 
 
 
+# branches in git
 git branch => see branches locally
 git branch -a => see remote branches
+# make a new branch a upstream and stop tracking old branch
+git branch --unset-upstream
+git checkout -b <new-branch>
+git push -u origin <new-branch> || git switch -c <new-branch>
 
+
+
+# Remote origins in git
 git remote -v => show origin names
 git remote show origin => shows origin with more details
 git remote remove origin => remove an origin after adding it
-
-
 git fetch origin => if remote has some changes then fetch it before pushing
 git push origin main => push code to origin and its main branch
 git push, git pull => if use -u in "git push -u origin main" -u sets --set-upstream so Git knows where to push and pull by default
-
-
 # Add the remote with the fetch URL
 git remote add origin https://github.com/aniket-2003-das/Git-and-GitHub.git
 # Set fetch URL for fetch only if required
