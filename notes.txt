@@ -31,8 +31,12 @@ Terminal => Not a shell itself — it’s an app to host multiple shells
 
 
 
-
+# General commands
 git clone <SSH key> => git init + download files from remote origin + set remote origin to SSH url 
+git commit -m "Initial commit" -m "initial commit's description"
+
+
+
 git init => initialize a local repo
 git add . => Stage all files weather untracked(git never saw file) or modified(we change a file that git has)
 git commit -m "Initial commit" => Commit locally
