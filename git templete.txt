@@ -1,0 +1,16 @@
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin <url>
+git push -u origin main
+
+
+
+
+git init => initialize a local repo
+git add . => Stage all files weather untracked(git never saw file) or modified(we change a file that git has)
+git commit -m "Initial commit" => Commit locally
+git branch -M main => select main as branch, this happens locally
+git remote add origin <url> => Link to a remote repo by specifying an origin
+git push -u origin main => Push to remote origin -u sets --set-upstream so Git knows where to push and pull by default

@@ -1,0 +1,33 @@
+git branch => see branches locally
+git branch -a => see remote branches
+# stop tracking old branch
+git branch --unset-upstream
+
+
+
+# make a new branch 
+git checkout -b <new-branch>
+(git checkout main => go to main branch)
+(git diff newbranch => type command in main branch to see changes)
+(git merge new branch => type command in main branch to merge changes new branch)
+// Dont push create a pull request
+
+
+
+
+# push changes of new branch
+git add .
+git commit -m "Initial commit in new branch"
+git push -u origin <new-branch> || git switch -c <new-branch>
+
+
+
+// suppose at any time after making a pull request from new branch the new branch is merged by senior i want access to new codebase of main
+(git checkout main => go to main branch)
+git pull origin main
+// delete new branch
+git branch -d new-branch-name 
+// update new branch with main
+git merge main => can/will have version conflicts to resolve manually
+
+

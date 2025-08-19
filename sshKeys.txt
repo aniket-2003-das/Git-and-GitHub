@@ -1,0 +1,14 @@
+# Command to generate ssh keys
+ssh-keygen -t ed25519 -C "your_email@example.com"
+filename and phrase => for ssh key saving filename and phrase prefer blank
+
+# Some powershell commands
+cat filename.pub => print public keycopy copy and paste public key in GitHub
+Get-Content filename.pub | clip => copy ssh key to clipboard and paste public key in GitHub
+
+# start the ssh-agent in the background
+Get-Service -Name ssh-agent | Set-Service -StartupType Manual
+Start-Service ssh-agent
+
+# add SSH private key to the ssh-agent
+ssh-add c:/Users/YOU/.ssh/id_ed25519

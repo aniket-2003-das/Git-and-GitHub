@@ -1,0 +1,61 @@
+# Common Terminologies
+Directory => Folder
+Terminal or Command Line => Interface for Text Commands
+CLI => Command Line Interface
+cd => Change Directory
+Repository => Project, Codebase Folder
+GitHub => Website to host Repositories online
+Git => tool and system for version control
+
+
+
+# Git Commands:
+clone => duplicate a remote repository to local machine
+add => track your files and changes in Git
+commit => save your files/changes in Git
+push => upload Git commits to a remote repo, like GitHub, GitLab, GitBucket
+pull => download changes from remote repo to local machine
+
+
+
+# Command Prompt
+dir => List all files in dir
+dir /a => List all hidden files
+cd => change current directory
+cls => clear screen
+del filename => delete a file
+mkdir foldername => rceate new directory
+rmdir foldername => remove directory
+type => display contents of file
+exit => close command prompt
+
+
+
+# PowerShell command => purpose => alias => Get-Command, Get-Help command
+Get-ChildItem => see all files in dir => ls
+Get-ChildItem -Force => show all files => ls -Force
+Get-ChildItem *itemname* => to view and access itemname
+Set-Location path => change current directory => cd
+Clear-Host => clear the screen => cls
+Remove-Item filename => delete files/directories => rm, del	
+New-Item -Type Directory foldername	=> Create a new directory.
+Get-Content filename => get content of a file => cat
+
+
+shells => Command Prompt(old), PowerShell(2006-new), Git Bash, WSL
+Terminal => Not a shell itself — it’s an app to host multiple shells
+// All commands of command Prompt should work with PowerShell
+// VS Code naturally supports PowerShell until opening command Prompt saperately 
+
+
+
+# General commands
+git clone <SSH key> => git init + download files from remote origin + set remote origin to SSH url 
+git commit -m "Initial commit" -m "initial commit's description"
+git init => initialize a local repo
+git add . => Stage all files weather untracked(git never saw file) or modified(we change a file that git has)
+git commit -m "Initial commit" => Commit locally
+git branch -M main => select main as branch, this happens locally
+git remote add origin <url> => Link to a remote repo by specifying an origin
+git push -u origin main => Push to remote origin -u sets --set-upstream so Git knows where to push and pull by default
+
